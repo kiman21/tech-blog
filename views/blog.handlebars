@@ -1,0 +1,23 @@
+<div class="card custom-card">
+    <div class="card-body">
+        <div class=""><h5 class="card-title"><a href="#" id="blogTitle" class="comment-link" data-blog-id="{{id}}">{{blogCommentData.title}}</a></h5></div>
+        <div class="">Posted by: <span class="username">{{blogCommentData.User.username}}</span> on <span class="date">{{blogCommentData.createdAt}}</span></div>
+    </div>
+    <div class="card-body text" id="contentBox">
+        <p class="card-text" id="postTexts">{{blogCommentData.content}}</p>
+    </div>
+</div>
+
+<div id="comment-Container">
+    <h4>Comments:</h2>
+    {{#each blogCommentData.Comments}}
+            <div class="card custom-card">
+                <div class="card-body text">
+                    <p class="card-text" id="postTexts">{{content}}</p>
+                </div>
+                <div class="commentInfo">
+                    <div class="">Posted by: <span class="username">{{User.username}}</span> on <span class="date">{{createdAt}}</span></div>
+                </div>
+            </div>
+    {{/each}}
+</div>

@@ -1,0 +1,26 @@
+{{#each allBlogs}}
+  <div class="card custom-card">
+      <div class="card-body">
+          <div class=""><h5 class="card-title"><a href="#" id="blogTitle" class="comment-link" data-blog-id="{{id}}">{{title}}</a></h5></div>
+          <div class="">Posted by: <span class="username">{{User.username}}</span> on <span class="date">{{createdAt}}</span></div>
+      </div>
+      <div class="card-body text" id="contentBox">
+          <p class="card-text" id="postTexts">{{content}}</p>
+      </div>
+  </div>
+
+  <div class="container my-4">
+    <div class="d-flex">
+        <div class="form-container" id="showCommentForm" style="display: none;">
+            <form id="commentForm">
+                <div class="form-group">
+                    <textarea id="addComment" class="form-control mb-2" rows="3"></textarea>
+                </div>
+                <button id="commentBtn" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+  </div>
+{{/each}}
+
+<script src="/js/comment.js"></script>

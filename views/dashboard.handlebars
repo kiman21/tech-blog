@@ -1,0 +1,51 @@
+{{#each Blogs}}
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class=""><h5 class="card-title blogH"><a href="#" id="postTitle" class="update-link" data-blog-id="{{id}}">{{title}}</a></h5></div>
+                <div class="blogInfo">Posted on <span class="date">{{createdAt}}</span></div>
+            </div>
+            <div class="card-body text" id="contentBox">
+                <p class="card-text" id="postTexts">{{content}}</p>
+            </div>
+        </div>
+
+<div class="container my-4">
+  <div class="d-flex">
+    <div class="form-container" id="showUpdateForm" style="display: none;">
+        <form id="updateForm">
+            <div class="form-group">
+                <input id="updateTitle" class="form-control mb-2"value="{{title}}">
+            </div>
+            <div class="form=group">
+                <textarea id="updateText" class="form-control mb-2">{{content}}</textarea>
+            </div>
+            <button id="updateBtn" class="btn btn-primary">Update</button>
+            <button id="deleteBtn" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+<div class="container my-4">
+  <div class="d-flex">
+    <div class="form-container" id="showForm" style="display: none;">
+        <form id="createBlogForm">
+            <div class="form-group">
+                <input type="text" id="blogTitle" class="form-control mb-2" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <textarea id="blogContent" placeholder="Content" class="form-control mb-2"></textarea>
+            </div>
+            <button type="submit" id="createBlogBtn" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+  </div>
+    <button type="click" class="btn btn-primary" id="showFormBtn">+ New Post</button>
+</div>
+
+{{!-- <button type="click" class="btn btn-primary" id="showFormBtn">+ New Post</button> --}}
+
+
+<script src="/js/dashboard.js"></script>
+<script src="/js/update.js"></script>
