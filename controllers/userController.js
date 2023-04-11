@@ -36,12 +36,12 @@ router.get("/:id", (req,res) => {
 router.post("/", (req,res) => {
     console.log(req.body);
     User.create({
-        username: req.body.username,
+        email: req.body.email,
         password: req.body.password
     })
     .then(userData=>{
         req.session.userId = userData.id;
-        req.session.username = userData.username;
+        req.session.email = userData.email;
         res.json(userData)
     })
     .catch(err=>{
@@ -53,7 +53,7 @@ router.post("/", (req,res) => {
 router.post("/login", (req,res) => {
     User.findOne({
         where:{
-            username: req.body.username,
+            username: req.body.email,
         }
     })
     .then(userData=>{
@@ -62,7 +62,7 @@ router.post("/login", (req,res) => {
         } else {
             if(bcrypt.compareSync(req.body.password, userData.password)) {
                 req.session.userId = userData.id;
-                req.session.username = userData.username;
+                req.session.email = userData.email;
                 return res.json(userData);
             } else {
                 res.status(401).json({msg:"Incorrect user information."})

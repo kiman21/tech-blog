@@ -49,7 +49,7 @@ router.get("/viewblog/:blogId", (req,res) => {
       include:[
         {
           model: User,
-          attributes: ['id', 'username']
+          attributes: ['id', 'email']
         },
         {
           model: Comment,
