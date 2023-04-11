@@ -7,7 +7,7 @@ router.get("/",(req,res)=>{
       include:[User, Comment]
   }).then(blogData=>{
       console.log(blogData)
-      const hbsWeblogs = blogData.map(blog=>blog.toJSON())
+      const hbsBlogs = blogData.map(blog=>blog.toJSON())
       console.log(hbsBlogs)
       res.render("home",{
           allBlogs:hbsBlogs
