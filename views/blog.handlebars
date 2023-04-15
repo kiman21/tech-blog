@@ -1,4 +1,4 @@
-<div class="card custom-card">
+<div class="card custom-card d-flex align-items-end">
     <div class="card-body">
         <div class=""><h5 class="card-title"><a href="#" id="blogTitle" class="comment-link" data-blog-id="{{id}}">{{blogCommentData.title}}</a></h5></div>
         <div class="">Posted by: <span class="username">{{blogCommentData.User.username}}</span> on <span class="date">{{blogCommentData.createdAt}}</span></div>
@@ -11,7 +11,7 @@
 <div id="comment-Container">
     <h4>Comments:</h2>
     {{#each blogCommentData.Comments}}
-            <div class="card custom-card">
+            <div class="card custom-card d-flex align-items-end">
                 <div class="card-body text">
                     <p class="card-text" id="postTexts">{{content}}</p>
                 </div>
