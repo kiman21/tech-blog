@@ -40,7 +40,6 @@ router.post("/", (req,res) => {
         password: req.body.password
     })
     .then(userData=>{
-        req.session.userId = userData.id;
         req.session.email = userData.email;
         res.json(userData)
     })
@@ -61,7 +60,6 @@ router.post("/login", (req,res) => {
             res.status(401).json({msg:"Incorrect user information."})
         } else {
             if(bcrypt.compareSync(req.body.password, userData.password)) {
-                req.session.userId = userData.id;
                 req.session.email = userData.email;
                 return res.json(userData);
             } else {
