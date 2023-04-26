@@ -18,12 +18,12 @@ const seed = async ()=>{
 
     const blogs = await Blog.bulkCreate([
         {
-            title:"testing",
+            title:"Test Blog Post",
             content:"testing testing 123",
             UserId:1
         },
         {
-            title:"more testing",
+            title:"Another Test Blog Post",
             content:"more testing testin 123",
             UserId:2
         }
