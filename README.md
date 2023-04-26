@@ -10,9 +10,17 @@ The application should be deployed and ready to use! If you are cloning the repo
 
 ##Usage
 
-To use, after opening the homepage, either sign in or sign up a new user with a username and password from the prompted window. Going to the homepage will display existing posts, click on one to read the full post and to comment. Going to the dashboard will display the user's existing posts and a button to create new posts. Click on an existing blog post in the dashboard to edit or delete it.
+To use, after opening the homepage, click login and either sign in or sign up a new user with an email and password from the prompted window. Going to the homepage will display existing posts, click on one to read the full post and to comment. Going to the dashboard will display the user's existing posts and a button to create new posts. Click on an existing blog post in the dashboard to edit or delete it. To logout, click logout on the navbar.
 [Deployed application](https://tech-blog-23.herokuapp.com/)
 [Github deployment](https://kiman21.github.io/tech-blog/)
+
+![Homepage](/assets/homepage.PNG)
+![Login](/assets/login.PNG)
+![Signup](/assets/signup.PNG)
+![Dashboard](/assets/dashboard1.PNG)
+![Edit Post](/assets/dashboard2.png)
+![Comment](/assets/comment.png)
+![Logout](/assets/logout.png)
 
 ##Credits
 N/A
