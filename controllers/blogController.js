@@ -70,7 +70,7 @@ router.post("/", (req,res)=>{
     })
 });
 
-router.put("/:id",(req,res)=>{
+router.post("/:id",(req,res)=>{
     Blog.update(
         {
             title: req.body.title,
@@ -83,13 +83,7 @@ router.put("/:id",(req,res)=>{
     }
     )
     .then(blogData=>{
-        if (blogData[0]) {
-            return res.json(blogData);
-        } else {
-            return res.status(404).json({
-                message: "No Record Found.",
-        });
-    }
+        res.json(blogData);
     })
     .catch(err=>{
         console.log(err);
