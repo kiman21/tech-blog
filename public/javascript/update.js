@@ -1,24 +1,24 @@
-const postTitles = document.querySelectorAll('#postTitle');
-const showUpdateForms = document.querySelectorAll('#showUpdateForm');
-const updateLink = document.querySelector('.update-link');
+const postTitles = document.querySelectorAll("#postTitle");
+const showUpdateForms = document.querySelectorAll("#showUpdateForm");
+const updateLink = document.querySelector(".update-link");
 
 
 postTitles.forEach((postTitle, index) => {
-    postTitle.addEventListener('click', (event) => {
-      event.preventDefault();
+    postTitle.addEventListener("click", (e) => {
+      e.preventDefault();
       showUpdateForms[index].style.display = showUpdateForms[index].style.display === 'none' ? 'block' : 'none';
     });
   });
 
-document.querySelector("#updateBtn").addEventListener("click", event => {
-    event.preventDefault();
+document.querySelector("#updateBtn").addEventListener("click",  e=> {
+    e.preventDefault();
     const updateObj = {
         title:document.querySelector("#updateTitle").value,
         content:document.querySelector("#updateText").value
     }
     console.log(updateObj);
     const blogId = updateLink.dataset.blogId;
-    fetch(`/api/weblogs/${blogId}`, {
+    fetch("/api/blogs/${blogId}", {
         method:"PUT",
         body:JSON.stringify(updateObj),
         headers:{
@@ -35,10 +35,10 @@ document.querySelector("#updateBtn").addEventListener("click", event => {
     })
 })
 
-document.querySelector("#deleteBtn").addEventListener("click", event=> {
-    event.preventDefault();
+document.querySelector("#deleteBtn").addEventListener("click", e=> {
+    e.preventDefault();
     const blogId = updateLink.dataset.blogId;
-    fetch(`/api/weblogs/${blogId}`, {
+    fetch("/api/blogs/${blogId}", {
         method:"DELETE",
         headers:{
             "Content-Type": "application/json",

@@ -1,8 +1,8 @@
-document.querySelector('#loginForm').addEventListener("submit" ,event=>{
-    event.preventDefault();
+document.querySelector("#loginBtn").addEventListener("click" ,e=>{
+    e.preventDefault();
     const loginObj = {
-        email:document.querySelector('#loginEmail').value,
-        password:document.querySelector('#loginPassword').value
+        email:document.querySelector("#loginEmail").value,
+        password:document.querySelector("#loginPassword").value
     }
     console.log(loginObj);
     fetch("/api/users/login", {

@@ -1,8 +1,8 @@
-document.querySelector('#signupForm').addEventListener("submit" ,event=>{
-    event.preventDefault();
+document.querySelector("#signupForm").addEventListener("submit" ,e=>{
+    e.preventDefault();
     const signUpObj = {
-        email:document.querySelector('#signupEmail').value,
-        password:document.querySelector('#signupPassword').value
+        email:document.querySelector("#signupEmail").value,
+        password:document.querySelector("#signupPassword").value
     }
     console.log(signUpObj);
     fetch("/api/users", {
@@ -14,7 +14,7 @@ document.querySelector('#signupForm').addEventListener("submit" ,event=>{
     })
     .then(res=>{
         if(res.ok){
-           location.href="/"
+           location.href="/dashboard"
         } else {
             alert("trumpet sound")
         }

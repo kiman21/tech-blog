@@ -2,8 +2,8 @@ const showFormBtn = document.querySelector("#showFormBtn");
 const createBlogForm = document.querySelector("#createBlogForm");
 const showForm = document.querySelector("#showForm");
 
-showFormBtn.addEventListener("click",event=>{
-    event.preventDefault();
+showFormBtn.addEventListener("click",e=>{
+    e.preventDefault();
     if (showForm.style.display === 'none') {
         showForm.style.display = 'block';
     } else {
@@ -11,8 +11,8 @@ showFormBtn.addEventListener("click",event=>{
     }
 });
 
-createBlogForm.addEventListener("submit",event=>{
-    event.preventDefault();
+createBlogForm.addEventListener("submit",e=>{
+    e.preventDefault();
     const blogObj = {
         title: document.querySelector("#blogTitle").value,
         content: document.querySelector("#blogContent").value

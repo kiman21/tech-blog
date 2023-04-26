@@ -16,11 +16,7 @@ router.get("/",(req,res)=>{
 })
 
 router.get("/login",(req,res)=>{
-  if(req.session.userId){
-    res.redirect("/dashboard")
-  } else {
     res.render("login")
-  }
 })
 
 router.get("/signup",(req,res)=>{

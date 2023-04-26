@@ -1,20 +1,20 @@
-const blogTitles = document.querySelectorAll('#blogTitle');
-const showCommentForms = document.querySelectorAll('#showCommentForm');
-const commentBtn = document.querySelector('#commentBtn');
-const commentLink = document.querySelector('.comment-link');
+const blogTitles = document.querySelectorAll("#blogTitle");
+const showCommentForms = document.querySelectorAll("#showCommentForm");
+const commentBtn = document.querySelector("#commentBtn");
+const commentLink = document.querySelector(".comment-link");
 
 blogTitles.forEach((blogTitle, index) => {
-    blogTitle.addEventListener('click', (event) => {
-        event.preventDefault();
+    blogTitle.addEventListener('click', e=> {
+        e.preventDefault();
         showCommentForms[index].style.display = showCommentForms[index].style.display === 'none' ? 'block' : 'none';
         const commentLink = event.target;
         commentBtn.dataset.blogId = commentLink.dataset.blogId;
     });
 });
 
-commentBtn.addEventListener("click",(event) => {
-    event.preventDefault();
-    const blogId = event.target.dataset.blogId;    
+commentBtn.addEventListener("click", e=> {
+    e.preventDefault();
+    const blogId = e.target.dataset.blogId;    
     const commentObj = {
         content:document.querySelector("#addComment").value,
         blogId: blogId
@@ -30,7 +30,7 @@ commentBtn.addEventListener("click",(event) => {
     })
     .then(res=>{
         if(res.ok){
-            location.href=`/viewblog/${blogId}`
+            location.href="/viewblog/${blogId}"
         } else {
             alert("Error.")
         }
